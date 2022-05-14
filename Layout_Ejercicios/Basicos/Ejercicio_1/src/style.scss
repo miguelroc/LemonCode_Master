@@ -1,0 +1,131 @@
+$mycolor-red: red;
+$mycolor-blue: rgb(40, 112, 175);
+$mycolor-green: rgb(116, 194, 116);
+$mycolor-fontred: rgb(125, 166, 189);
+$mycolor-fontblue: rgba(151, 161, 70, 0.475);
+$mycolor-fontgreen: rgb(128, 94, 139);
+$darken-1: darken($mycolor-red, 5%);
+$borders: 20px;
+$bc_width: 140px;
+$dc_gap: 10px;
+$constant: 6%;
+
+@mixin oscurecer($b_color: white, $l_color: white, $grado: 0%) {
+  background-color: darken($b_color, $grado);
+  color: saturate($l_color, $grado);
+}
+
+@mixin aclarar($b_color: white, $l_color: white, $grado: 0%) {
+  background-color: lighten($b_color, $grado);
+  color: desaturate($l_color, $grado);
+}
+
+@mixin base-color($base_color: yellow) {
+  width: $bc_width;
+  color: white;
+  background-color: $base_color;
+}
+
+.body {
+  display: flex;
+  flex: {
+    direction: row;
+    wrap: wrap;
+  }
+
+  font: {
+    family: Arial;
+    size: 20px;
+  }
+  gap: $dc_gap;
+  margin: 60px 30px;
+}
+
+.div {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_g {
+  width: 100px;
+  height: 110px;
+}
+
+.div_container {
+  display: flex;
+  gap: $dc_gap;
+}
+
+body {
+  @extend .body;
+
+  div {
+    @extend .div;
+
+    .box {
+      @extend .box_g;
+    }
+  }
+
+  div.container-1 {
+    @extend .div_container;
+
+    .base-color {
+      @include base-color($mycolor-red);
+    }
+    @for $i from 1 through 5 {
+      .darken-#{$i} {
+        @include oscurecer($mycolor-red, $mycolor-fontred, $i * $constant);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      .lighten-#{$i} {
+        @include aclarar($mycolor-red, $mycolor-fontred, $i * $constant);
+      }
+    }
+  }
+
+  div.container-2 {
+    @extend .div_container;
+
+    .base-color {
+      @include base-color($mycolor-blue);
+    }
+
+    @for $i from 1 through 5 {
+      .darken-#{$i} {
+        @include oscurecer($mycolor-blue, $mycolor-fontblue, $i * $constant);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      .lighten-#{$i} {
+        @include aclarar($mycolor-blue, $mycolor-fontblue, $i * $constant);
+      }
+    }
+  }
+
+  div.container-3 {
+    @extend .div_container;
+
+    .base-color {
+      @include base-color($mycolor-green);
+    }
+
+    @for $i from 1 through 5 {
+      .darken-#{$i} {
+        @include oscurecer($mycolor-green, $mycolor-fontgreen, $i * $constant);
+      }
+    }
+
+    @for $i from 1 through 5 {
+      .lighten-#{$i} {
+        @include aclarar($mycolor-green, $mycolor-fontgreen, $i * $constant);
+      }
+    }
+  }
+}

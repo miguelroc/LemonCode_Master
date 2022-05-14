@@ -1,0 +1,109 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  --padding_menu_box: 10px;
+  --font-size_lemon_max_resol: 20px;
+  --font-size_lemon_min_resol: 20px;
+  --font-size_flex_max_resol: 14px;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.lemoncode {
+  display: flex;
+  padding: 10px 10px 10px 0px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--font-size_lemon_max_resol);
+  font-weight: bold;
+}
+
+.container2 {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgb(39, 140, 140);
+  color: white;
+  font-size: var(--font-size_flex_max_resol);
+}
+
+.menu {
+  padding: var(--padding_menu_box);
+}
+
+.menu:hover {
+  background-color: rgb(4, 93, 105);
+}
+
+@media screen and (min-width: 156px) and (max-width: 700px) {
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-style: solid;
+    width: auto;
+    border-width: 7px 10px;
+    padding: 15px 10px 100px;
+  }
+
+  .lemoncode {
+    font-size: var(--font-size_lemon_min_resol);
+  }
+
+  .container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: rgb(39, 140, 140);
+    color: white;
+    font-size: 14px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 155px) {
+  body {
+    width: 155px;
+    height: 320px;
+  }
+
+  .container1 {
+    display: inline-flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 7px 10px;
+    padding: 15px 10px 100px;
+  }
+
+  .lemoncode {
+    font-size: var(--font-size_lemon_min_resol);
+  }
+
+  .container2 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: rgb(39, 140, 140);
+    color: white;
+    font-size: 14px;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
