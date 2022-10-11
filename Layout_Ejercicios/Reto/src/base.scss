@@ -99,9 +99,10 @@ img {
   }
 
   main {
-    .section-title & {
+    .section-title {
       @include elements-shown($masPopulares_5);
     }
+
     .top {
       display: flex;
       flex-direction: row-reverse;
@@ -135,7 +136,6 @@ img {
 }
 
 @media screen and (max-width: 1279px) {
-  
 }
 
 @media screen and (max-width: 799px) {
