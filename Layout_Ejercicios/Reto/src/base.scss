@@ -30,6 +30,10 @@ body {
   main {
     section {
       padding-bottom: 25px;
+
+      .item {
+        min-width: 250px;
+      }
     }
   }
 }
@@ -138,21 +142,9 @@ img {
       .item:hover {
         width: 30em;
       }
-    }
 
-    section.top {
-      gap: 3px;
-
-      .top-item, img {
-        min-width: 225px;
-      }    
-    }
-
-    section.first, section.second {
-      .item, img {
-        min-width: 250px;
-        min-height: auto;
-        flex-grow: 1; 
+      .item, .top-item {
+        flex-grow: 1;
       }
     }
   }
