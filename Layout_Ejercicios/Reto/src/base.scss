@@ -25,7 +25,6 @@ body {
     position: sticky;
     top: 0;
     background-color: $background_dark;
-    /* ToDo - header does not remains on the top when scrolling */
   }
 
   main {
@@ -40,8 +39,16 @@ img {
     width: 35%;
   }
 
-  main & {
+  section & {
     width: 100%;
+  }
+
+  .top-item & {
+    min-width: 225px;
+  }
+
+  .item & {
+    min-width: 250px;
   }
 }
 
@@ -57,7 +64,7 @@ img {
   header {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     box-sizing: border-box;
 
@@ -113,12 +120,14 @@ img {
     .first {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       flex: 1;
       align-items: center;
     }
 
     .second {
       display: flex;
+      flex-wrap: wrap;
       flex-direction: row;
       align-items: center;
     }
@@ -128,8 +137,22 @@ img {
 
       .item:hover {
         width: 30em;
-        /* ToDo - Hover selector: image should grow over .section-title */
-        /* ToDo - Hover selector: images should be contained in the body without horizontal scroll */
+      }
+    }
+
+    section.top {
+      gap: 3px;
+
+      .top-item, img {
+        min-width: 225px;
+      }    
+    }
+
+    section.first, section.second {
+      .item, img {
+        min-width: 250px;
+        min-height: auto;
+        flex-grow: 1; 
       }
     }
   }
