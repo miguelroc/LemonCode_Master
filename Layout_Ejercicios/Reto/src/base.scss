@@ -30,10 +30,6 @@ body {
   main {
     section {
       padding-bottom: 25px;
-
-      .item {
-        min-width: 250px;
-      }
     }
   }
 }
@@ -125,14 +121,13 @@ img {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      flex: 1;
       align-items: center;
     }
 
     .second {
       display: flex;
-      flex-wrap: wrap;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
     }
 
@@ -142,9 +137,25 @@ img {
       .item:hover {
         width: 30em;
       }
+    }
 
-      .item, .top-item {
+    section.top {
+      gap: 3px;
+
+      .top-item,
+      img {
+        min-width: 225px;
         flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+
+    section.first,
+    section.second {
+      .item,
+      img {
+        flex-grow: 1;
+        flex-shrink: 1;
       }
     }
   }
