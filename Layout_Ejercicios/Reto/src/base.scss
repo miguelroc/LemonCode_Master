@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Jost");
 
+@mixin elements_shown($elements) {
+  span::before {
+    font-family: verdana;
+    content: $elements;
+    font-weight: bold;
+  }
+}
+
+$background_dark: #141414;
+$masPopulares_5: "5";
+$masPopulares_3: "3";
+
 * {
   margin: 0px;
   padding: 0px;
 }
-
-/* variables globales */
-$background_dark: #141414;
-$masPopulares_5: "5";
-$masPopulares_3: "3";
 
 body {
   background-color: $background_dark;
@@ -21,19 +28,15 @@ body {
   padding-left: 15px;
 
   header {
+    background-color: $background_dark;
     padding-bottom: 30px;
     position: sticky;
     top: 0;
-    background-color: $background_dark;
   }
 
   main {
     section {
       padding-bottom: 25px;
-
-      .item {
-        min-width: 250px;
-      }
     }
   }
 }
@@ -46,21 +49,19 @@ img {
   section & {
     width: 100%;
   }
-
-  .top-item & {
-    min-width: 225px;
-  }
-
-  .item & {
-    min-width: 250px;
-  }
 }
 
-@mixin elements_shown($elements) {
-  span::before {
-    font-family: verdana;
-    content: $elements;
-    font-weight: bold;
+.top-item {
+  width: 225px;
+}
+
+.item {
+  width: 250px;
+}
+
+@media screen and (max-width: 1700px) {
+  .item {
+    width: 20%;
   }
 }
 
@@ -140,10 +141,11 @@ img {
       gap: 3px;
 
       .item:hover {
-        width: 30em;
+        width: 23em;
       }
 
-      .item, .top-item {
+      .item,
+      .top-item {
         flex-grow: 1;
       }
     }
@@ -151,9 +153,11 @@ img {
 }
 
 @media screen and (max-width: 1279px) {
+  /* ToDo */
 }
 
 @media screen and (max-width: 799px) {
+  /* ToDo */
   .platform-title {
     display: none;
   }
