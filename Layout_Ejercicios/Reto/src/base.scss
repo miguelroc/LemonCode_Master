@@ -153,8 +153,6 @@ main {
 }
 
 @media screen and (max-width: 1279px) {
-  /* ToDo */
-
   header .platform-title {
     color: $background_dark;
   }
@@ -178,30 +176,89 @@ main {
   .item {
     width: 30%;
   }
+
+  main {
+    section {
+      .item:hover {
+        width: 35%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 985px) {
   .item {
     width: 34%;
   }
+
+  main {
+    section {
+      .item:hover {
+        width: 42%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 875px) {
-  /* ToDo */
-  section {
-    .item:hover {
-      width: 35%;
+  header img {
+    width: 50%;
+  }
+
+  body {
+    header {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 875px) and (orientation: landscape) {
+  .item {
+    width: 25%;
+  }
+
+  img {
+    section .top-item & {
+      width: 85%;
     }
   }
 
-  header img {
-    width: 75%;
+  main {
+    section {
+      .item:hover {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  main {
+    .top {
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: nowrap;
+      justify-content: center;
+      box-sizing: border-box;
+      align-items: center;
+    }
+
+    .top-item {
+      width: 60%;
+    }
   }
 }
 
 @media screen and (max-width: 459px) {
-  /* ToDo */
-  header img {
-    width: 75%;
+  /*ToDo: Update the header section "logo - inicio - buscar" centered*/
+
+  header {
+    img {
+      width: 70%;
+    }
+
+    .platform-title {
+      display: none;
+    }
   }
 }
