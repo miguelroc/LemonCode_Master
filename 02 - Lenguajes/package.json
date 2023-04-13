@@ -25,11 +25,18 @@
     "url": "git+https://github.com/Lemoncode/language-sessions.git"
   },
   "scripts": {
-    "start": "lite-server -c bs-config.json"
+    "start": "npm run copy && run-p transpile devserver",
+    "copy": "copyfiles --flat src/**/*.{html,css} transpiled",
+    "transpile": "tsc",
+    "devserver": "lite-server -c bs-config.json"
   },
   "dependencies": {
     "lite-server": "^2.x"
   },
   "peerDependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "copyfiles": "^2.x",
+    "npm-run-all": "^4.x",
+    "typescript": "latest"
+  }
 }
