@@ -1,6 +1,6 @@
 # EJERCICIOS LABORATORIO BÁSICO:
 
-## WEBPACK BÁSICO
+## WEBPACK Básico
 
 LemonCode_Master\03-Bundling\Basico
 
@@ -8,10 +8,10 @@ LemonCode_Master\03-Bundling\Basico
 
 Los ejercicios de laboratorio Opcional están distribuidos en dos carpetas separadas por webpack y parcel
 
-## WEBPACK BÁSICO
+## WEBPACK Opcional
 
 LemonCode_Master\03-Bundling\Opciona\Opcional_3.0_React+ProdDev+EnvVar+Analz
 
-## PARCEL
+## PARCEL Opcional
 
 LemonCode_Master\03-Bundling\Opciona\Opcional_1.0_Parcel+React+Analz
