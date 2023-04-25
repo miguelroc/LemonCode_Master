@@ -31,6 +31,7 @@ module.exports = merge(common, {
             loader: "css-loader",
             options: {
               modules: {
+                auto: true,
                 exportLocalsConvention: "camelCase",
                 localIdentName: "[path][name]__[local]--[hash:base64:5]",
                 localIdentContext: path.resolve(__dirname, "src"),
